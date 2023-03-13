@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="CSS/popupstyle.css">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link href='https://www.cellcast.com.au/client/views/besma/assets/js/bootstrap/dist/css/bootstrap.css'
+    rel='stylesheet'>
+  <script src="https://www.cellcast.com.au/client/views/besma/assets/js/jquery.min.js"></script>
+  <script src="https://www.cellcast.com.au/client/views/besma/assets/js/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#welcom_step_modal"> Launch demo modal
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="welcom_step_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content step_modal">
+        <div class="modal-body">
+          <div class="popup center">
+            <div class="progressbar">
+              <div class="progress-step progress-step-active form_step_1"></div>
+              <div class="progress-step form_step_2"></div>
+              <div class="progress-step form_step_3"></div>
+              <div class="progress-step form_step_4"></div>
+            </div>
+            <div class="form-step form-step-active" id="form_step_1">
+              <div class="icon">
+                <img src="CSS/Start.png">
+              </div>
+              <div class="title"> Hi name, welcome to Cellcast! </div>
+              <div class="description"> To get the best experience with us, we just need to ask 3 questions. This will
+                allow us to personalize the experience for you :) </div>
+              <div class="line">
+                <hr>
+              </div>
+              <div class="footer_button">
+                <div class="dismiss-btn">
+                  <button id="dismiss-popup-btn" data-dismiss="modal"> Ask me Later </button>
+                </div>
+                <div class="footer_button_group">
+                  <div class="continue-btn" onclick="run(1, 2,'nextcls');">
+                    <button id="continue-popup-btn"> Get Started </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-step" id="form_step_2">
+              <div class="title"> Great! What is your industry? </div>
+              <div class="description"> We'll send you relevant information and templates that are tailored to you
+              </div>
+              <div class="action-wrapper">
+                <div class="industry-selector-container">
+                  <p class="page-two-text">My industry is...</p>
+                  <div class="option">
+                    <div class="select">
+                      <select name="industry" id="industry">
+                        <option selected disabled>Select your industry</option>
+                        <option value="hospitality">Hospitality</option>
+                        <option value="retail">Retail</option>
+                        <option value="beauty">Beauty</option>
+                        <option value="beauty">Barber</option>
+                        <option value="construction">Construction</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="fitnessandhealth">Fitness & Health</option>
+                        <option value="it">IT</option>
+                        <option value="recruitment">Recruitment</option>
+                        <option value="government">Government</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="notforprofit">Not for profit</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="specify-others">
+                  <p class="page-two-text">Please Specify</p>
+                  <div style="width: 80%">
+                    <input type="text" id="others" />
+                  </div>
+                </div>
+              </div>
+              <div class="line">
+                <hr>
+              </div>
+              <div class="footer_button">
+                <div class="dismiss-btn">
+                  <button id="dismiss-popup-btn" data-dismiss="modal"> Ask me Later </button>
+                </div>
+                <div class="footer_button_group">
+                  <div class="previous-btn" onclick="run(2, 1,'prevcls');">
+                    <button id="previous-popup-btn"> Previous </button>
+                  </div>
+                  <div class="continue-btn" onclick="run(2, 3,'nextcls');">
+                    <button id="continue-popup-btn"> Next </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-step" id="form_step_3">
+              <div class="title"> Almost there, I'm interested in... </div>
+              <div class="description"> We'll point you in the right direction. You can select as many as you like
+              </div>
+              <div class="options-container-three">
+                <button class="option" value="Marketing & Promotions">Marketing & Promotions</button>
+                <button class="option" value="Internal Communications">Internal Communications</button>
+                <button class="option" value="Appontments & Remainders">Appontments & Remainders</button>
+                <button class="option" value="Reviews">Reviews</button>
+                <button class="option" value="API & Devtools">API & Dev tools</button>
+                <button class="option" value="Not Sure">Not Sure</button>
+              </div>
+              <div class="line">
+                <hr>
+              </div>
+              <div class="footer_button">
+                <div class="dismiss-btn">
+                  <button id="dismiss-popup-btn" data-dismiss="modal"> Ask me Later </button>
+                </div>
+                <div class="footer_button_group">
+                  <div class="previous-btn" onclick="run(3, 2,'prevcls');">
+                    <button id="previous-popup-btn"> Previous </button>
+                  </div>
+                  <div class="continue-btn" onclick="run(3, 4,'nextcls');">
+                    <button id="continue-popup-btn"> Next </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-step" id="form_step_4">
+              <div class="title"> Last one, let's set your goals </div>
+              <div class="description"> We'll help you achieve what you need. You can select as many as you like </div>
+              <div class="options-container-four">
+                <button class="option" value="Improve Sales">Improve Sales</button>
+                <button class="option" value="Collect reviews">Collect reviews</button>
+                <button class="option" value="Integration">Integration</button>
+                <button class="option" value="Generate leads">Generate leads</button>
+                <button class="option" value="Catch enquires">Catch enquires</button>
+                <button class="option" value="Other">Other</button>
+              </div>
+              <div class="line">
+                <hr>
+              </div>
+              <div class="footer_button">
+                <div class="dismiss-btn">
+                  <button id="dismiss-popup-btn" data-dismiss="modal"> Ask me Later </button>
+                </div>
+                <div class="footer_button_group">
+                  <div class="previous-btn" onclick="run(4, 3,'prevcls');">
+                    <button id="previous-popup-btn"> Previous </button>
+                  </div>
+                  <div class="continue-btn" onclick="run(4, 5,'nextcls');">
+                    <button id="continue-popup-btn"> Next </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-step" id="form_step_5">
+              <div class="icon">
+                <img src="CSS/Finish.png">
+              </div>
+              <div class="title"> Thank you 'name'! </div>
+              <div class="description"> While you start taking advantage of our platform, we'll get to work on getting
+                your platform tailored for you </div>
+              <div class="line">
+                <hr>
+              </div>
+              <div class="footer_button">
+                <div class="dismiss-btn">
+                  <button id="dismiss-popup-btn" data-dismiss="modal"> Ask me Later </button>
+                </div>
+                <div class="footer_button_group">
+                  <div class="previous-btn" onclick="run(5, 4,'prevcls');">
+                    <button id="previous-popup-btn"> Previous </button>
+                  </div>
+                  <div class="continue-btn">
+                    <button id="continue-popup-btn" data-dismiss="modal"> Finish </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<!--Jquery-->
+<script>
+  // Maintaing a parallel array to keep track of the options selected(1) and unselected(0)
+  const optionsPageThree = ['Marketing & Promotions', 'Internal Communications', 'Appontments & Remainders', 'Reviews', 'API & Devtools', 'Not Sure'];
+  const optionsPageFour = ['Improve Sales', 'Collect reviews', 'Integration', 'Generate leads', 'Catch enquires', 'Other'];
+  const selectedStates = [0, 0, 0, 0, 0, 0];
+
+  // Storing the selected options title. Final list of selected options, that can be sent to backed to do filtering. 
+  let selectedOptionsPageThree = [];
+  let selectedOptionsPageFour = [];
+
+  // Querying for the options, and getting their list
+  const optionsListPageThree = document.querySelectorAll('.options-container-three .option');
+  const optionsListPageFour = document.querySelectorAll('.options-container-four .option');
+
+  // For each of the options from optionsList, adding a 'click' event listener to run a funciton each time an option is clicked.
+  optionsListPageThree.forEach((option, i) => option.addEventListener('click', function (e) {
+
+    // get the value of the clicked option
+    const clicked = option.value;
+
+
+    // Wasn't selected before. Now is. So, store the answer.
+    if (!selectedStates[i]) {
+      // Update the selected state of the current option to 1
+      selectedStates[i] = 1;
+
+      // Store the selected option
+      selectedOptionsPageThree.push(optionsPageThree[i]);
+
+      // Add the active class
+      option.classList.add('active');
+
+
+    } else if (selectedStates[i]) { // Has been selected before. Remove the answer and the selectedState
+
+      // Update the selected state of the current option to 0
+      selectedStates[i] = 0;
+
+      // Remove the selected option
+      selectedOptionsPageThree = [...selectedOptionsPageThree.filter(el => el !== selectedOptionsPageThree[i])];
+
+      // Remove the active class
+      option.classList.remove('active');
+    }
+  }));
+
+  //same process for page 4
+  optionsListPageFour.forEach((option, i) => option.addEventListener('click', function (e) {
+
+    // get the value of the clicked option
+    const clicked = option.value;
+
+
+    // Wasn't selected before. Now is. So, store the answer.
+    if (!selectedStates[i]) {
+      // Update the selected state of the current option to 1
+      selectedStates[i] = 1;
+
+      // Store the selected option
+      selectedOptionsPageFour.push(optionsPageFour[i]);
+
+      // Add the active class
+      option.classList.add('active');
+
+
+    } else if (selectedStates[i]) { // Has been selected before. Remove the answer and the selectedState
+
+      // Update the selected state of the current option to 0
+      selectedStates[i] = 0;
+
+      // Remove the selected option
+      selectedOptionsPageFour = [...selectedOptionsPageFour.filter(el => el !== selectedOptionsPageFour[i])];
+
+      // Remove the active class
+      option.classList.remove('active');
+    }
+  }));
+
+
+
+  $(".form-step").css("display", "none")
+  $("#form_step_1").css("display", "block");
+
+
+  function run(hideTab, showTab, btnclass) {
+    console.log(hideTab, showTab);
+    if (hideTab < showTab) { //if press next button
+      //validation
+      // var currentTab = 0;
+      // x = $("#form_step_" + hideTab);
+      // y = $(x).find("input");  
+
+      // for(i = 0; i < y.length; i++){
+      //   if(y[i].value == ""){
+      //     $(y[i]).css("background", "#ffdddd");
+      //     return false;
+      //   }
+      // }
+    }
+
+    //switch tab
+    $("#form_step_" + hideTab).css("display", "none");
+    $("#form_step_" + showTab).css("display", "block");
+    if (btnclass == 'nextcls') {
+      $(".form_step_" + hideTab).addClass("complete");
+    }
+    if (btnclass == 'prevcls') {
+      $(".form_step_" + showTab).removeClass("complete");
+    }
+    $("input").css("background", "#fff")
+  }
+
+  $('#industry').change(function () {
+    let selected = $(this).val();
+
+    if (selected === 'other') {
+      $('.specify-others').css('display', 'flex')
+    } else {
+      $('.specify-others').css('display', 'none')
+    }
+  });
+
+
+
+
+</script>
+
+</html>
